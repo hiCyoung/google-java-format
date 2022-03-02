@@ -26,7 +26,7 @@
   </parent>
 
   <artifactId>google-java-format</artifactId>
-
+  <version>1.14.0.suyu_fork</version>
   <name>Google Java Format</name>
 
   <description>

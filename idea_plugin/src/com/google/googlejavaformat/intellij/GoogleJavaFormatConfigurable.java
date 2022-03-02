@@ -61,7 +61,7 @@ class GoogleJavaFormatConfigurable extends BaseConfigurable implements Searchabl
   @Nls
   @Override
   public String getDisplayName() {
-    return "google-java-format Settings";
+    return "google-java-format-suyu Settings";
   }
 
   @Nullable

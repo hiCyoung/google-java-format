@@ -49,20 +49,7 @@ import com.google.common.base.MoreObjects;
 import com.google.common.base.Predicate;
 import com.google.common.base.Throwables;
 import com.google.common.base.Verify;
-import com.google.common.collect.HashMultiset;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMultimap;
-import com.google.common.collect.ImmutableSet;
-import com.google.common.collect.ImmutableSetMultimap;
-import com.google.common.collect.ImmutableSortedSet;
-import com.google.common.collect.Iterables;
-import com.google.common.collect.Iterators;
-import com.google.common.collect.Multiset;
-import com.google.common.collect.PeekingIterator;
-import com.google.common.collect.Range;
-import com.google.common.collect.RangeSet;
-import com.google.common.collect.Streams;
-import com.google.common.collect.TreeRangeSet;
+import com.google.common.collect.*;
 import com.google.errorprone.annotations.CheckReturnValue;
 import com.google.googlejavaformat.CloseOp;
 import com.google.googlejavaformat.Doc;
@@ -297,6 +284,7 @@ public class JavaInputAstVisitor extends TreePathScanner<Void, Void> {
 
   protected static final Indent.Const ZERO = Indent.Const.ZERO;
   protected final int indentMultiplier;
+  private final JavaFormatterOptions.Style style;
   protected final Indent.Const minusTwo;
   protected final Indent.Const minusFour;
   protected final Indent.Const plusTwo;
@@ -330,9 +318,10 @@ public class JavaInputAstVisitor extends TreePathScanner<Void, Void> {
    *
    * @param builder the {@link OpsBuilder}
    */
-  public JavaInputAstVisitor(OpsBuilder builder, int indentMultiplier) {
+  public JavaInputAstVisitor(OpsBuilder builder, int indentMultiplier, JavaFormatterOptions.Style style) {
     this.builder = builder;
     this.indentMultiplier = indentMultiplier;
+    this.style = style;
     minusTwo = Indent.Const.make(-2, indentMultiplier);
     minusFour = Indent.Const.make(-4, indentMultiplier);
     plusTwo = Indent.Const.make(+2, indentMultiplier);
@@ -3872,8 +3861,11 @@ public class JavaInputAstVisitor extends TreePathScanner<Void, Void> {
    * Should a field with a set of modifiers be declared with horizontal annotations? This is
    * currently true if all annotations are parameterless annotations.
    */
-  private static Direction fieldAnnotationDirection(ModifiersTree modifiers) {
+  private Direction fieldAnnotationDirection(ModifiersTree modifiers) {
     for (AnnotationTree annotation : modifiers.getAnnotations()) {
+      if (style == JavaFormatterOptions.Style.SUYU) {
+        return Direction.VERTICAL;
+      }
       if (!annotation.getArguments().isEmpty()) {
         return Direction.VERTICAL;
       }

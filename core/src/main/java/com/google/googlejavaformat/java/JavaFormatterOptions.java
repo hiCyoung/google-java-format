@@ -34,7 +34,10 @@ public class JavaFormatterOptions {
     GOOGLE(1),
 
     /** The AOSP-compliant configuration. */
-    AOSP(2);
+    AOSP(2),
+
+    /**基于AOSP，对于Resource,Autowired注解做了处理*/
+    SUYU(2);
 
     private final int indentationMultiplier;
 

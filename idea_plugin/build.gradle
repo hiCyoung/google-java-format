@@ -19,11 +19,12 @@ plugins {
 }
 
 repositories {
+  mavenLocal()
   mavenCentral()
 }
 
 ext {
-  googleJavaFormatVersion = "1.14.0"
+  googleJavaFormatVersion = "1.14.0.suyu_fork"
 }
 
 apply plugin: "org.jetbrains.intellij"
@@ -33,7 +34,7 @@ sourceCompatibility = JavaVersion.VERSION_11
 targetCompatibility = JavaVersion.VERSION_11
 
 intellij {
-  pluginName = "google-java-format"
+  pluginName = "google-java-format-suyu"
   plugins = ["java"]
   version = "221.3427-EAP-CANDIDATE-SNAPSHOT"
 }
@@ -59,4 +60,5 @@ sourceSets {
 
 dependencies {
   implementation "com.google.googlejavaformat:google-java-format:${googleJavaFormatVersion}"
+  implementation "org.jetbrains:annotations:22.0.0"
 }

@@ -86,7 +86,7 @@ import javax.tools.StandardLocation;
 @Immutable
 public final class Formatter {
 
-  public static final int MAX_LINE_LENGTH = 100;
+  public static final int MAX_LINE_LENGTH = 120;
 
   static final Range<Integer> EMPTY_RANGE = Range.closedOpen(-1, -1);
 
@@ -156,13 +156,13 @@ public final class Formatter {
         visitor =
             Class.forName("com.google.googlejavaformat.java.java14.Java14InputAstVisitor")
                 .asSubclass(JavaInputAstVisitor.class)
-                .getConstructor(OpsBuilder.class, int.class)
+                .getConstructor(OpsBuilder.class, int.class, JavaFormatterOptions.Style.class)
                 .newInstance(builder, options.indentationMultiplier());
       } catch (ReflectiveOperationException e) {
         throw new LinkageError(e.getMessage(), e);
       }
     } else {
-      visitor = new JavaInputAstVisitor(builder, options.indentationMultiplier());
+      visitor = new JavaInputAstVisitor(builder, options.indentationMultiplier(), options.style());
     }
     visitor.scan(unit, null);
     builder.sync(javaInput.getText().length());

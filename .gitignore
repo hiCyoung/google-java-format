@@ -13,3 +13,5 @@ target/
 bin/
 out/
 eclipse_plugin/lib/
+.DS_Store
+idea_plugin/.DS_Store

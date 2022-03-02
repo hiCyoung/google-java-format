@@ -19,7 +19,7 @@
   <id>google-java-format</id>
   <name>google-java-format</name>
   <vendor url="https://github.com/google/google-java-format">
-    Google
+    ForkGoogle
   </vendor>
 
   <!-- Mark it as available on all JetBrains IDEs. It's really only useful in
@@ -29,6 +29,8 @@
 
   <change-notes><![CDATA[
     <dl>
+      <dt>1.14.0.suyu_adapt.0</dt>
+      <dd>based on google 1.14.0 version, changed indent size and field annotation break line style.</dd>
       <dt>1.14.0.0</dt>
       <dd>Updated to use google-java-format 1.14.</dd>
       <dt>1.13.0.0</dt>

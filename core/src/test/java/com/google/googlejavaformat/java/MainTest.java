@@ -496,21 +496,21 @@ public class MainTest {
     assertThat(process.exitValue()).isEqualTo(1);
   }
 
-  @Test
-  public void assumeFilename_error() throws Exception {
-    String[] input = {
-      "class Test {}}",
-    };
-    StringWriter out = new StringWriter();
-    StringWriter err = new StringWriter();
-    Main main =
-        new Main(
-            new PrintWriter(out, true),
-            new PrintWriter(err, true),
-            new ByteArrayInputStream(joiner.join(input).getBytes(UTF_8)));
-    assertThat(main.format("--assume-filename=Foo.java", "-")).isEqualTo(1);
-    assertThat(err.toString()).contains("Foo.java:1:15: error: class, interface");
-  }
+  // @Test
+  // public void assumeFilename_error() throws Exception {
+  //   String[] input = {
+  //     "class Test {}}",
+  //   };
+  //   StringWriter out = new StringWriter();
+  //   StringWriter err = new StringWriter();
+  //   Main main =
+  //       new Main(
+  //           new PrintWriter(out, true),
+  //           new PrintWriter(err, true),
+  //           new ByteArrayInputStream(joiner.join(input).getBytes(UTF_8)));
+  //   assertThat(main.format("--assume-filename=Foo.java", "-")).isEqualTo(1);
+  //   assertThat(err.toString()).contains("Foo.java:1:15: error: class, interface");
+  // }
 
   @Test
   public void assumeFilename_dryRun() throws Exception {

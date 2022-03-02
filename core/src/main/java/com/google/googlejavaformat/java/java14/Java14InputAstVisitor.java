@@ -21,6 +21,7 @@ import com.google.common.base.Verify;
 import com.google.common.collect.ImmutableList;
 import com.google.googlejavaformat.OpsBuilder;
 import com.google.googlejavaformat.OpsBuilder.BlankLineWanted;
+import com.google.googlejavaformat.java.JavaFormatterOptions;
 import com.google.googlejavaformat.java.JavaInputAstVisitor;
 import com.sun.source.tree.AnnotationTree;
 import com.sun.source.tree.BindingPatternTree;
@@ -61,8 +62,8 @@ public class Java14InputAstVisitor extends JavaInputAstVisitor {
       maybeGetMethod(BindingPatternTree.class, "getBinding");
   private static final Method CASE_TREE_GET_LABELS = maybeGetMethod(CaseTree.class, "getLabels");
 
-  public Java14InputAstVisitor(OpsBuilder builder, int indentMultiplier) {
-    super(builder, indentMultiplier);
+  public Java14InputAstVisitor(OpsBuilder builder, int indentMultiplier, JavaFormatterOptions.Style style) {
+    super(builder, indentMultiplier, style);
   }
 
   @Override
