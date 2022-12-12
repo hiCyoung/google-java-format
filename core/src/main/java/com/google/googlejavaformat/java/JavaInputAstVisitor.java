@@ -2628,7 +2628,7 @@ public class JavaInputAstVisitor extends TreePathScanner<Void, Void> {
     for (ExpressionTree thrownExceptionType : thrownExceptionTypes) {
       if (!first) {
         token(",");
-        builder.breakToFill(" ");
+        builder.breakOp(" ");
       }
       scan(thrownExceptionType, null);
       first = false;

@@ -24,7 +24,7 @@ repositories {
 }
 
 ext {
-  googleJavaFormatVersion = "1.14.0.suyu_fork"
+  googleJavaFormatVersion = "1.15.0_suyu_fork"
 }
 
 apply plugin: "org.jetbrains.intellij"
