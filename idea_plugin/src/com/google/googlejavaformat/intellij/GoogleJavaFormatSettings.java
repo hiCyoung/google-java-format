@@ -26,8 +26,8 @@ import org.checkerframework.checker.nullness.qual.Nullable;
 import org.jetbrains.annotations.NotNull;
 
 @State(
-    name = "GoogleJavaFormatSettings",
-    storages = {@Storage("google-java-format.xml")})
+    name = "GoogleJavaFormatSettingsFork",
+    storages = {@Storage("google-java-format-fork.xml")})
 class GoogleJavaFormatSettings implements PersistentStateComponent<GoogleJavaFormatSettings.State> {
 
   private State state = new State();

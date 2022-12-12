@@ -15,12 +15,16 @@
  */
 
 plugins {
-  id "org.jetbrains.intellij" version "1.4.0"
+  id "org.jetbrains.intellij" version "1.10.1"
 }
 
 repositories {
   mavenLocal()
+    maven  {
+      url "https://repo1.maven.org/maven2"
+  }
   mavenCentral()
+
 }
 
 ext {
@@ -36,7 +40,9 @@ targetCompatibility = JavaVersion.VERSION_11
 intellij {
   pluginName = "google-java-format-suyu"
   plugins = ["java"]
-  version = "221.3427-EAP-CANDIDATE-SNAPSHOT"
+  // https://www.jetbrains.com/intellij-repository/snapshots/
+  // com.jetbrains.intellij.java
+  version = "223.7126.7-EAP-SNAPSHOT"
 }
 
 patchPluginXml {

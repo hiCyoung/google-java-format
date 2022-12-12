@@ -16,8 +16,8 @@
 
 <idea-plugin url="https://github.com/google/google-java-format/tree/master/idea_plugin"
   require-restart="true">
-  <id>google-java-format</id>
-  <name>google-java-format</name>
+  <id>google-java-format-fork</id>
+  <name>google-java-format-fork</name>
   <vendor url="https://github.com/google/google-java-format">
     ForkGoogle
   </vendor>
@@ -75,11 +75,11 @@
   <extensions defaultExtensionNs="com.intellij">
     <projectConfigurable
       instance="com.google.googlejavaformat.intellij.GoogleJavaFormatConfigurable"
-      id="google-java-format.settings"
-      displayName="google-java-format Settings"/>
+      id="google-java-format-fork.settings"
+      displayName="google-java-format-fork Settings"/>
     <projectService
       serviceImplementation="com.google.googlejavaformat.intellij.GoogleJavaFormatSettings"/>
-    <notificationGroup displayType="STICKY_BALLOON" id="Enable google-java-format"
+    <notificationGroup displayType="STICKY_BALLOON" id="Enable google-java-format-fork"
       isLogByDefault="true"/>
   </extensions>
 

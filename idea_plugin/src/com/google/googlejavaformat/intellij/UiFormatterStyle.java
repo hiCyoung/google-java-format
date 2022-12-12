@@ -25,7 +25,7 @@ import java.util.Objects;
 enum UiFormatterStyle {
   GOOGLE("Default Google Java style", Style.GOOGLE),
   AOSP("Android Open Source Project (AOSP) style", Style.AOSP),
-  AOSP_SUYU("SUYU Based on AOSP style", Style.SUYU),
+  AOSP_FORK("Suyu forked Based on AOSP style", Style.SUYU),
   ;
 
   private final String description;
