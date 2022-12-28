@@ -34,11 +34,11 @@ ext {
 apply plugin: "org.jetbrains.intellij"
 apply plugin: "java"
 
-sourceCompatibility = JavaVersion.VERSION_11
-targetCompatibility = JavaVersion.VERSION_11
+sourceCompatibility = JavaVersion.VERSION_17
+targetCompatibility = JavaVersion.VERSION_17
 
 intellij {
-  pluginName = "google-java-format-suyu"
+  pluginName = "google-java-format-fork"
   plugins = ["java"]
   // https://www.jetbrains.com/intellij-repository/snapshots/
   // com.jetbrains.intellij.java

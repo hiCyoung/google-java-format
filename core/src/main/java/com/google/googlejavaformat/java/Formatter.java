@@ -157,7 +157,7 @@ public final class Formatter {
             Class.forName("com.google.googlejavaformat.java.java17.Java17InputAstVisitor")
                 .asSubclass(JavaInputAstVisitor.class)
                 .getConstructor(OpsBuilder.class, int.class, JavaFormatterOptions.Style.class)
-                .newInstance(builder, options.indentationMultiplier());
+                .newInstance(builder, options.indentationMultiplier(), options.style());
       } catch (ReflectiveOperationException e) {
         throw new LinkageError(e.getMessage(), e);
       }

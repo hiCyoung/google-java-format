@@ -51,8 +51,8 @@ import javax.lang.model.element.Name;
  */
 public class Java17InputAstVisitor extends JavaInputAstVisitor {
 
-  public Java17InputAstVisitor(OpsBuilder builder, int indentMultiplier) {
-    super(builder, indentMultiplier);
+  public Java17InputAstVisitor(OpsBuilder builder, int indentMultiplier, JavaFormatterOptions.Style style) {
+    super(builder, indentMultiplier, style);
   }
 
   @Override
